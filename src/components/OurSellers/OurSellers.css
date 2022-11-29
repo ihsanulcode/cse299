@@ -1,0 +1,23 @@
+.title-container {
+  margin-top: 50px;
+}
+.seller-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------responsive--------------- */
+
+@media only screen and (max-width: 768px) {
+  .seller-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .seller-container {
+    grid-template-columns: 1fr;
+  }
+}

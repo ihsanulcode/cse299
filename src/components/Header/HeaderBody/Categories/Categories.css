@@ -1,0 +1,16 @@
+.categories-btn {
+  width: 310px;
+  height: 65px;
+  background-color: #e1f5fe;
+  color: black;
+}
+.categories-btn:hover {
+  background-color: #8ed3f3;
+}
+.light-blue {
+  background-color: #e1f5fe;
+}
+.categories li {
+  width: 310px;
+  padding: 0;
+}

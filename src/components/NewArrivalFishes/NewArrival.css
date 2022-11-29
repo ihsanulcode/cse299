@@ -1,0 +1,26 @@
+.cards-container {
+  margin-top: 100px;
+}
+/* view all button design */
+.viewAll-btn {
+  border: none;
+  background-color: white;
+}
+.viewAll-btn:hover {
+  background-color: aliceblue;
+}
+
+/* fish cards design */
+.fish-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: space-around;
+  justify-items: center;
+}
+
+/* responsive for mobile and tablet */
+@media only screen and (max-width: 768px) {
+  .fish-cards {
+    grid-template-columns: 1fr;
+  }
+}
