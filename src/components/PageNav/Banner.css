@@ -1,0 +1,23 @@
+.banner .banner-text {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 30%;
+  z-index: 20;
+}
+.banner .banner-text h1 {
+  font-size: 3.5vw;
+}
+.banner .banner-text p {
+  font-size: 1.5vw;
+}
+.darkened-img img {
+  filter: brightness(60%);
+}
+
+/* responsive for mobile and tablet */
+@media screen and (max-width: 992px) {
+  .banner .banner-text {
+    top: 25%;
+  }
+}

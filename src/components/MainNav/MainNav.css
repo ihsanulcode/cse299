@@ -1,0 +1,56 @@
+.main-nav {
+  height: 83px;
+}
+/* -----------------nav heading----------------- */
+.navbarBrand {
+  width: 353.59px;
+  height: 39.33px;
+  font-weight: 900;
+  font: bold;
+  color: #00579c;
+}
+.navbarBrand a {
+  color: #00579c;
+}
+.navbarBrand a:hover {
+  color: #1d85da;
+}
+
+/* -----------------search area------------------ */
+.searchfield {
+  width: 50%;
+}
+.searchfield input {
+  width: 100%;
+  /* width: 478px; */
+  height: 36.9px;
+  margin-left: none;
+  border: 1px, solid, grey;
+}
+.searchfield button {
+  width: 51.82px;
+  height: 36.9px;
+  border: 1px, solid, grey;
+  border-radius: 5px;
+  margin-left: 3px;
+}
+.searchfield button .icon {
+  font: 50px;
+}
+/* -----------------login and registration area----------------- */
+.loginBlock {
+  width: 350px;
+  padding-left: 60px;
+}
+.loginBlock a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
+/* -----------------------responsive for mobile devices------------------ */
+@media only screen and (max-width: 768px) {
+  .searchfield {
+    width: 80%;
+  }
+}
