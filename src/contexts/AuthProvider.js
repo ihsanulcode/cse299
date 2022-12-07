@@ -29,7 +29,7 @@ function AuthProvider({ children }) {
   };
 
   const updateUserName = (name) => {
-    return updateProfile(auth.currentUser, { displayName: name });
+    return updateProfile(auth.currentUser, { displayName: `${name}` });
   };
 
   const signIn = (email, password) => {
@@ -45,6 +45,7 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      console.log(currentUser);
       setLoading(false);
     });
     return () => {

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Container } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
+import JohnDoe from "../JohnDoe";
 import "./MainNav.css";
 
 function MainNav() {
@@ -10,6 +12,17 @@ function MainNav() {
 
   const navigate = useNavigate();
 
+  // -------------------------handling user state(logged in or logged out)----------------
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((e) => console.log(e));
+  };
+
+  // ------------------------handling product search------------------
   useEffect(() => {
     fetch("https://machbazar-server.vercel.app/categories")
       .then((res) => res.json())
@@ -45,9 +58,15 @@ function MainNav() {
               <FaSearch className="icon" onClick={handleProductSearch} />
             </button>
           </div>
-          <div className="d-none d-lg-block loginBlock mx-auto">
-            <Link to="/login">Login</Link>
-            <Link to="/register">Registration</Link>
+          <div>
+            {user?.uid ? (
+              <JohnDoe user={user} handleLogout={handleLogout}></JohnDoe>
+            ) : (
+              <div className="d-none d-lg-block loginBlock mx-auto">
+                <Link to="/login">Login</Link>
+                <Link to="/register">Registration</Link>
+              </div>
+            )}
           </div>
         </Container>
       </nav>

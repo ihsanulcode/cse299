@@ -6,7 +6,8 @@ import Registration from "./Pages/Registration/Registration";
 import Home from "./Pages/Home/Home";
 import ProductExtendedView from "./Pages/ProductExtendedView/ProductExtendedView";
 import SearchResult from "./Pages/SearchResult/SearchResult";
-import Categories from "./components/Header/HeaderBody/Categories/Categories";
+import Cart from "./Pages/Cart/Cart";
+import UserControlLayout from "./layouts/UserControlLayout";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,7 +41,23 @@ function App() {
               `https://machbazar-server.vercel.app/categories/${params.id}`
             ),
         },
+        {
+          path: "/cart/:uid",
+          element: <Cart></Cart>,
+          loader: ({ params }) =>
+            fetch(`https://machbazar-server.vercel.app/cart/${params.uid}`),
+        },
       ],
+    },
+    {
+      path: "/userControls",
+      element: <UserControlLayout></UserControlLayout>,
+      // children: [
+      //   {
+      //     path: "/account",
+      //     element: <MyAccount></MyAccount>,
+      //   },
+      // ],
     },
   ]);
   return (
